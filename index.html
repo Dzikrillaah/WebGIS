@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+    <title>WEBGIS POTENSI WISATA PESISIR KABUPATEN GUNUNGKIDUL</title>
+  </head>
+  <body>
+    <div id="WEBGIS" style="width: 100%; height: 790px"></div>
+      <header>
+          <div class="webgis">
+            <ul>
+                <li><a href="Home.html">HOME</a></li> 
+                <li><a href="index.html">WEBGIS</a></li>
+            </ul>
+  
+          </div>
+          </header>
+    <script>
+      // Add Peta
+      var Gunungkidul = L.map("WEBGIS").setView([-7.9923743,110.2522537], 12);
+
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 18,
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' + 'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        id: "mapbox/streets-v11",
+        tileSize: 512,
+        zoomOffset: -1,
+      }).addTo(Gunungkidul);
+
+      //Custom Marker
+      var Camicon = L.icon({
+        iconurl: "",
+      });
+
+      // Marker
+      var lokasi1 = L.icon({
+      iconUrl: './icon/marker3.png',
+      iconSize: [50, 50],
+      iconAnchor: [5, 40],
+      popupAnchor: [-1, -50],
+      shadowSize: [68, 95],
+      shadowAnchor: [15, 94]
+});
+      var marker1 = L.marker([-8.106006026046225, 110.46186468125903],{icon:lokasi1})
+        .addTo(Gunungkidul)
+        .bindPopup(
+          "<img src='https://jogjaempatroda.com/wp-content/uploads/2019/10/Teras-Kaca-Pantai-Nguluran-teraskaca-saratino-819x1024.jpg' width = '275px'><b> Teras Kaca Pantai Nguluran</b><br>Tiket Masuk : Rp5.000 per orang; Rp2.000 (parkir sepeda motor); Rp5.000 (parkir mobil); Rp10.000 (foto di teras kaca)</b><br> Lokasi : Dusun Bolang, Desa Girikarto, Kecamatan Panggang, Kabupaten Gunung Kidul, Yogyakarta 55872."
+        );
+        
+        var lokasi2 = L.icon({
+        iconUrl: './icon/marker1.png',
+        iconSize: [50, 50],
+        iconAnchor: [5, 30],
+        popupAnchor: [-1, -50],
+        shadowSize: [50, 95],
+        shadowAnchor: [15, 94]
+});
+      var marker2 = L.marker([-8.14038267362709, 110.58312395398184],{icon:lokasi2})
+        .addTo(Gunungkidul)
+        .bindPopup(
+          "<img src='https://img-z.okeinfo.net/okz/500/library/images/2020/09/29/wpu8457gg97dwkjrkkxs_15013.jpg' width = '300px'><b> Pantai Ngrumput</b><br>Tiket Masuk : Rp10.000 per orang; Rp3.000 (parkir sepeda motor); Rp5.000 (parkir mobil) (Parkir di Pantai Drini)</b><br>Lokasi : Desa Banjarejo, Kecamatan Tanjungsari, Kabupaten Gunung Kidul, Yogyakarta 55881. "
+        );
+
+        var lokasi3 = L.icon({
+        iconUrl: './icon/marker1.png',
+        iconSize: [50, 50],
+        iconAnchor: [5, 40],
+        popupAnchor: [-1, -30],
+        shadowSize: [50, 95],
+        shadowAnchor: [15, 94]
+});
+      var marker3 = L.marker([-8.15946391596091, 110.6292211317416],{icon:lokasi3})
+        .addTo(Gunungkidul)
+        .bindPopup(
+          "<img src='https://indonesia.tripcanvas.co/id/wp-content/uploads/sites/2/2018/10/3-1-Pantai-Watu-Nene-by-wachidab.jpg' width = '300px'><b> Pantai Watu Nene</b><br>Tiket Masuk: Rp10.000 per orang; Rp5.000 (parkir sepeda motor); Rp10.000 (parkir mobil) (Parkir di Pantai Seruni)</b><br>Lokasi: Desa Tepus, Kecamatan Tepus, Kabupaten Gunung Kidul, Yogyakarta 55881."
+        );
+
+        var lokasi4 = L.icon({
+        iconUrl: './icon/marker1.png',
+        iconSize: [50, 50],
+        iconAnchor: [5, 50],
+        popupAnchor: [-1, -30],
+        shadowSize: [50, 95],
+        shadowAnchor: [15, 94]
+});
+      var marker4 = L.marker([-8.19789471017798, 110.72085265675507],{icon:lokasi4})
+        .addTo(Gunungkidul)
+        .bindPopup(
+          "<img src='https://indonesia.tripcanvas.co/id/wp-content/uploads/sites/2/2018/10/4-1-Pantai-Sedahan-by-meettheexplorer_.jpg' width = '300px'><b> Pantai Sedahan</b><br>Tiket Masuk: Rp5.000 per orang; Rp5.000 (parkir sepeda motor) ; Rp10.000 (parkir mobil) (Parkir di Pantai Wediombo)</b><br>Lokasi: Desa Jepitu, Kecamatan Girisubo, Kabupaten Gunung Kidul, Yogyakarta 55883."
+        );
+
+        var lokasi5 = L.icon({
+        iconUrl: './icon/marker1.png',
+        iconSize: [50, 50],
+        iconAnchor: [5, 50],
+        popupAnchor: [-1, -30],
+        shadowSize: [50, 95],
+        shadowAnchor: [15, 94]
+});
+      var marker5 = L.marker([-8.19691065947381, 110.72243540562802],{icon:lokasi5})
+        .addTo(Gunungkidul)
+        .bindPopup(
+          "<img src='https://4.bp.blogspot.com/-BSROr6nop24/WSvM2VvjCvI/AAAAAAAAbE8/6hAxdYxtsHoFxLjyLvM-qhh6DXmVF-l1wCEw/s1600/dadapan2.jpg' width = '300px'><b> Pantai Dadapan</b><br>Tiket Masuk : Pengunjung hanya harus membayar retribusi ketika berada di pantai Wediombo sebesar Rp 5.000 termasuk untuk ke Pantai Greweng, Sedahan, dan pantai lain yang berada di sekitarnya</b><br>Pendowo, Jepitu, Girisubo, Kabupaten Gunung Kidul, Daerah Istimewa Yogyakarta 55883, Indonesia."
+        );
+
+        var lokasi6 = L.icon({
+        iconUrl: './icon/marker1.png',
+        iconSize: [50, 50],
+        iconAnchor: [5, 40],
+        popupAnchor: [-1, -30],
+        shadowSize: [50, 95],
+        shadowAnchor: [15, 94]
+});
+      var marker6 = L.marker([-8.127606212361899, 110.52402737727537],{icon:lokasi6})
+        .addTo(Gunungkidul)
+        .bindPopup(
+          "<img src='https://nyero.id/wp-content/uploads/2018/10/Wisata-Hits-Terbaru-Pantai-Peyuyon-Jogja.jpg' width ='300px'><b> Pantai Peyuyon</b><br>Tiket masuk : Rp 5.000 per orang</b><br>Lokasi : Kanigoro, Sapto Sari, Kabupaten Gunung Kidul, Daerah Istimewa Yogyakarta 55871."
+        );
+
+        var lokasi7 = L.icon({
+        iconUrl: './icon/marker1.png',
+        iconSize: [50, 50],
+        iconAnchor: [5, 40],
+        popupAnchor: [-1, -30],
+        shadowSize: [50, 95],
+        shadowAnchor: [15, 94]
+});
+      var marker7 = L.marker([-8.125598467567608, 110.52155755642899],{icon:lokasi7})
+        .addTo(Gunungkidul)
+        .bindPopup(
+          "<img src='https://statics.indozone.news/content/2020/06/16/6gsjm9e/t_5ee85045a0fa2_700.jpg' width ='300px'><b> Pantai Midodaren</b><br>Tiket masuk : Rp 5.000 per orang</b><br>Lokasi : Desa Kanigoro, Kecamatan Saptosari, Gunungkidul, Jogja."
+        );
+
+        var lokasi8 = L.icon({
+        iconUrl: './icon/marker1.png',
+        iconSize: [50, 50],
+        iconAnchor: [5, 38],
+        popupAnchor: [-1, -30],
+        shadowSize: [50, 95],
+        shadowAnchor: [15, 94]
+});
+      var marker8 = L.marker([-8.122563202739533, 110.51629565853062],{icon:lokasi8})
+        .addTo(Gunungkidul)
+        .bindPopup(
+          "<img src='https://rentalmobilyogyakarta.b-cdn.net/wp-content/uploads/2014/04/Wisata-Pantai-Torohudan.jpg' width = '300px'><b> Pantai Torohudan</b><br>Tiket masuk : Rp5.000/ orang dan itu sudah bisa untuk masuk ke kawasan Pantai Ngobaran, Nguyahan dan Ngrenehan</b><br>Lokasi :Kanigoro, Sapto Sari, Kabupaten Gunung Kidul, Daerah Istimewa Yogyakarta 55871."
+        );
+
+        var lokasi9 = L.icon({
+        iconUrl: './icon/marker1.png',
+        iconSize: [50, 50],
+        iconAnchor: [5, 38],
+        popupAnchor: [-1, -30],
+        shadowSize: [50, 95],
+        shadowAnchor: [15, 94]
+});
+      var marker9 = L.marker([-8.121145708549406, 110.51423329783076],{icon:lokasi9}).addTo(Gunungkidul).bindPopup("<img src='https://eksotisjogja.com/wp-content/uploads/2016/08/Pantai-Ngrenehan-g.jpg' width = '300px'><b> Pantai Ngrenehan</b><br>Tiket masuk : Rp. 5000/ orang, parkir motor : Rp.3000, parkir mobil : Rp.5000</b><br>Lokasi : Desa Kanogoro, Saptosari, Kabupaten Gunung Kidul, Daerah Istimewa Yogyakarta."
+      );
+
+      var lokasi10 = L.icon({
+        iconUrl: './icon/marker1.png',
+        iconSize: [50, 50],
+        iconAnchor: [5, 38],
+        popupAnchor: [-1, -30],
+        shadowSize: [50, 95],
+        shadowAnchor: [15, 94]
+});
+      var marker10 = L.marker([-8.119132980286832, 110.50503936098382],{icon:lokasi10}).addTo(Gunungkidul).bindPopup("<img src='https://asset.kompas.com/crop/0x0:780x520/750x500/data/photo/2019/03/15/1263289832.jpg' width = '300px'><b> Pantai Ngobaran</b><br>Tiket Masuk : Rp.5000</b><br>Lokasi : Jalan Ngobaran, Ngrenehan, Sapto Sari, Gebang, Kanigoro, Sapto Sari, Kabupaten Gunung Kidul, Daerah Istimewa Yogyakarta 55871, Indonesia."
+      );
+
+      var lokasi11 = L.icon({
+        iconUrl: './icon/marker1.png',
+        iconSize: [50, 50],
+        iconAnchor: [5, 38],
+        popupAnchor: [-1, -30],
+        shadowSize: [50, 95],
+        shadowAnchor: [15, 94]
+});
+      var marker11 = L.marker([-8.117861491859202, 110.49948459100041],{icon:lokasi11}).addTo(Gunungkidul).bindPopup("<img src='https://www.bookprimera.com/wp-content/uploads/2016/01/Pantai-Pringjono-596x459.jpg' width = '300px'><b> Pantai Pringjono</b><br>Tiket Masuk : Per Orang Rp. 5.000, Motor Rp. 3.000, Mobil Rp. 5.000, Bus Rp. 20.000</b><br>Lokasi : Desa Krambitsawit, Kecamatan Saptosari, Kabupaten Gunungkidul, Yogyakarta."
+      );
+
+      var lokasi12 = L.icon({
+        iconUrl: './icon/marker1.png',
+        iconSize: [50, 50],
+        iconAnchor: [5, 38],
+        popupAnchor: [-1, -30],
+        shadowSize: [50, 95],
+        shadowAnchor: [15, 94]
+});
+      var marker12 = L.marker([-8.11400327531803, 110.48986082516215],{icon:lokasi12})
+        .addTo(Gunungkidul)
+        .bindPopup("<img src=' https://cdn.statically.io/img/jelajahpantai.com/f=auto%2Cq=60/wp-content/uploads/2020/09/Foto-Pantai-Di-Jogja-Hidden-Paradise-Lokasi-Pantai-Ngluwen.jpg' width = '300px'><b> Pantai Ngluwen</b><br>Tiket Masuk : Rp 10.000 per orang. Sedangkan untuk parkir di Pantai pengunjung harus membayar Rp 3.000 untuk motor dan Rp 5.000 untuk mobil.</b><br>Lokasi : Karang Gn., Krambil Sawit, Sapto Sari, Kabupaten Gunung Kidul, Daerah Istimewa Yogyakarta 55871"
+        );
+
+        var lokasi13 = L.icon({
+        iconUrl: './icon/marker1.png',
+        iconSize: [50, 50],
+        iconAnchor: [5, 38],
+        popupAnchor: [-1, -30],
+        shadowSize: [50, 95],
+        shadowAnchor: [15, 94]
+});
+      var marker13 = L.marker([-8.18624442206684, 110.70990102727919],{icon:lokasi13}).addTo(Gunungkidul).bindPopup("<img src='https://ksmtour.com/media/images/articles16/pantai-wediombo-yogyakarta.jpg' width = '300px'><b> Pantai Wedi Ombo</b><br>Tiket Masuk : Rp 5.000,-</b><br>Lokasi: Desa Jepitu, Kecamatan Girisubo, Kabupaten Gunungkidul, D.I. Yogyakarta."
+        );
+
+        var lokasi14 = L.icon({
+        iconUrl: './icon/marker1.png',
+        iconSize: [50, 50],
+        iconAnchor: [5, 38],
+        popupAnchor: [-1, -30],
+        shadowSize: [50, 95],
+        shadowAnchor: [15, 94]
+});
+      var marker14 = L.marker([-8.098754619128137, 110.44059206017951],{icon:lokasi14}).addTo(Gunungkidul).bindPopup("<img src='https://www.jejakpiknik.com/wp-content/uploads/2017/06/@bagusarioe-630x380.jpg' width = '300px'><b> Pantai Wohkudu</b><br>Tiket Masuk : Rp3.000/orang</b><br>Lokasi : Desa Nglaos, Dukuh Wiroso, Kecamatan Panggang, Kabupaten Gunungkidul, D.I. Yogyakarta."
+      );
+
+      var lokasi15 = L.icon({
+      iconUrl: './icon/marker3.png',
+      iconSize: [50, 50],
+      iconAnchor: [5, 40],
+      popupAnchor: [-1, -50],
+      shadowSize: [68, 95],
+      shadowAnchor: [15, 94]
+});
+      var marker15 = L.marker([-8.175926591332223, 110.66241981333899],{icon:lokasi15}).addTo(Gunungkidul).bindPopup("<img src='https://www.yogyes.com/en/places/gunungkidul/pantai-timang/1.jpg' width = '300px'><b> Pantai Timang."
+        );
+
+        var lokasi16 = L.icon({
+        iconUrl: './icon/marker3.png',
+        iconSize: [50, 50],
+        iconAnchor: [5, 38],
+        popupAnchor: [-1, -10],
+
+        shadowAnchor: [15, 94]
+});
+      var marker16 = L.marker([-8.177304967226055, 110.66250794666453],{icon:lokasi16}).addTo(Gunungkidul).bindPopup("<img src='https://www.pesisir.net/wp-content/uploads/2020/07/Pantai-Timang.jpg' width = '300px'><b> Gondola Pantai Timang</b><br>Tarif Kereta Gantung: Rp200.000,-</b><br>Lokasi : Tepus, Kabupaten Gunungkidul, D.I. Yogyakarta 5581."
+      );
+
+      var lokasi17 = L.icon({
+      iconUrl: './icon/marker2.png',
+      iconSize: [50, 50],
+      iconAnchor: [5, 40],
+      popupAnchor: [-1, -50],
+      shadowSize: [68, 95],
+      shadowAnchor: [15, 94]
+});
+
+      var marker17 = L.marker([-8.151541513591429, 110.61328496495119],{icon:lokasi17})
+        .addTo(Gunungkidul)
+        .bindPopup("<img src='https://www.tepus.desa.id/assets/files/artikel/sedang_1565590057IMG-20190805-WA0005[1].jpg' width = '300px'><b> Bukit Karang Gunung Kidul</b><br>Tiket Masuk : Rp10.000</b><br>Lokasi : Desa Nglaos, Dukuh Wiroso, Kecamatan Panggang, Kabupaten Gunungkidul, D.I. Yogyakarta."
+        );
+
+        var lokasi18 = L.icon({
+          iconUrl: './icon/marker3.png',
+          iconSize: [50, 50],
+          iconAnchor: [5, 40],
+        popupAnchor: [-1, -50],
+        shadowSize: [68, 95],
+        shadowAnchor: [15, 94]
+});
+      var marker18 = L.marker([-8.133876346624328, 110.55483444175803],{icon:lokasi18}).addTo(Gunungkidul).bindPopup("<img src='https://rentalmobiljogja.id/wp-content/uploads/2016/11/pantaikukup-750x562.jpg' width = '300px'><b> Pantai Kukup</b><br>Tiket Masuk: Rp4.000,- (sudah termasuk Pantai Baron, Sepanjang, Drini, Krakal, Sundak, Pulang Syawal dan Poktungga).</b><br>Lokasi : Desa Kemadang, Kecamatan Tanjungsari, Kabupaten Gunungkidul, D.I. Yogyakarta."
+      );
+
+      var lokasi19 = L.icon({
+          iconUrl: './icon/marker1.png',
+          iconSize: [50, 50],
+          iconAnchor: [5, 40],
+        popupAnchor: [-1, -50],
+        shadowSize: [68, 95],
+        shadowAnchor: [15, 94]
+});
+      var marker19 = L.marker([-8.182702090306327, 110.67924004346315],{icon:lokasi19}).addTo(Gunungkidul).bindPopup("<img src='https://jogjaonstage.com/wp-content/uploads/2019/01/pantai_nglambor_gunungkidul.jpg' width = '300px'><b> Pantai Nglambor</b><br>Tarif Snorkeling: Paket Rp50.000,- sudah termasuk sewa masker, snorkel, sepatu karet, life jacket, guide, foto underwater, welcome drink, dan penitipan barang.</b><br>Lokasi: Desa Purwodadi, Kecamatan Tepus, Kabupaten Gunungkidul, D.I. Yogyakarta."
+      );
+
+      var lokasi20 = L.icon({
+          iconUrl: './icon/marker1.png',
+          iconSize: [50, 50],
+          iconAnchor: [5, 40],
+        popupAnchor: [-1, -50],
+        shadowSize: [68, 95],
+        shadowAnchor: [15, 94]
+});
+      var marker20 = L.marker([-8.15358274220006, 110.61773412014205],{icon:lokasi20}).addTo(Gunungkidul).bindPopup("<img src='https://www.alodiatour.com/wp-content/uploads/2018/11/Fasilitas-Pantai-Watu-Lawang.jpg' width = '300px'><b> Pantai Watu Lawang</b><br>Tiket Masuk: Rp5.000,- (sudah termasuk untuk mengunjungi jajaran pantai mulai dari Pantai Baron ke timur hingga Pantai Watulawang)</b><br>Lokasi: Kecamatan Tepus, Kabupaten Gunungkidul, D.I. Yogyakarta."
+      );
+
+      var lokasi21 = L.icon({
+      iconUrl: './icon/marker3.png',
+      iconSize: [50, 50],
+});
+      var marker21 = L.marker([-8.02685444301254, 110.34591182290816],{icon:lokasi21})
+        .addTo(Gunungkidul)
+        .bindPopup("<img src='https://asset.kompas.com/crops/I-g3MRXcYGYPNhD3T7drBmhOmOA=/0x0:1000x667/750x500/data/photo/2020/01/31/5e33eac1e7b63.jpg' width = '300px'><b> Bukit Paralayang Watu Gupit</b><br>Tiket Masuk : Rp 5.000 per orangnya. Sekitar 500 meter, pengunjung akan tiba di lokasi area parkir Bukit Paralayang. Biaya parkir sepeda motor di sini seharga Rp 3.000 dan Rp 5.000 hingga Rp 10.000 untuk mobil atau bis.</b><br>Lokasi : Area Hutan, Giricahyo, Purwosari, Kabupaten Gunung Kidul, Daerah Istimewa Yogyakarta 55872."
+        );
+
+        var lokasi22 = L.icon({
+          iconUrl: './icon/marker1.png',
+          iconSize: [50, 50],
+          iconAnchor: [5, 40],
+        popupAnchor: [-1, -50],
+        shadowSize: [68, 95],
+        shadowAnchor: [15, 94]
+});
+      var marker22 = L.marker([-8.18013361674079, 110.67637055294209],{icon:lokasi22}).addTo(Gunungkidul).bindPopup("<img src='https://eksotisjogja.com/wp-content/uploads/2016/08/pantai-jogan.jpg' width = '300px'><b> Pantai Jogan</b><br>Tiket Masuk : Rp 5000</b><br>Lokasi : Tepus, Kabupaten Gunungkidul, D.I. Yogyakarta."
+      );
+    </script>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
